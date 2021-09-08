@@ -48,13 +48,13 @@ namespace CapaNegocio1
             return Obj.Eliminar(Obj);
         }
 
-        //Metodo Mostrar que llama al metodo mostrar de la clase DCategoria de la CapaDatos
+        //Metodo Mostrar que llama al metodo mostrar de la clase DArticulo de la CapaDatos
         public static DataTable Mostrar()
         {
             return new DArticulo().Mostrar();
         }
 
-        //Metodo BuscarNombre que llama al metodo buscarnombre de la clase DCategoria de la CapaDatos
+        //Metodo BuscarNombre que llama al metodo buscarnombre de la clase DArticulo de la CapaDatos
         public static DataTable BuscarNombre(string textobuscar)
         {
             DArticulo Obj = new DArticulo();
