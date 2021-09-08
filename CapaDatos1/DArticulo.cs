@@ -287,7 +287,6 @@ namespace CapaDatos1
             catch (Exception ex)
 #pragma warning restore CS0168 // La variable 'ex' se ha declarado pero nunca se usa
             {
-
                 DtResultado = null;
             }
             return DtResultado;
@@ -320,7 +319,6 @@ namespace CapaDatos1
             catch (Exception ex)
 #pragma warning restore CS0168 // La variable 'ex' se ha declarado pero nunca se usa
             {
-
                 DtResultado = null;
             }
             return DtResultado;
