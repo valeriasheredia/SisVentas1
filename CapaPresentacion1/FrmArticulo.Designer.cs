@@ -134,6 +134,8 @@ namespace CapaPresentacion1
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataListado.Size = new System.Drawing.Size(392, 160);
             this.dataListado.TabIndex = 5;
+            this.dataListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellContentClick);
+            this.dataListado.DoubleClick += new System.EventHandler(this.dataListado_DoubleClick);
             // 
             // Eliminar
             // 
@@ -149,6 +151,7 @@ namespace CapaPresentacion1
             this.btnNuevo.TabIndex = 2;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // lblTotal
             // 
@@ -168,6 +171,7 @@ namespace CapaPresentacion1
             this.chkEliminar.TabIndex = 3;
             this.chkEliminar.Text = "Eliminar";
             this.chkEliminar.UseVisualStyleBackColor = true;
+            this.chkEliminar.CheckedChanged += new System.EventHandler(this.chkEliminar_CheckedChanged);
             // 
             // btnImprimir
             // 
@@ -186,6 +190,7 @@ namespace CapaPresentacion1
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnBuscar
             // 
@@ -195,6 +200,7 @@ namespace CapaPresentacion1
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnCancelar
             // 
@@ -204,6 +210,7 @@ namespace CapaPresentacion1
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // btnEditar
             // 
@@ -213,6 +220,7 @@ namespace CapaPresentacion1
             this.btnEditar.TabIndex = 2;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -222,6 +230,7 @@ namespace CapaPresentacion1
             this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtBuscar
             // 
@@ -229,6 +238,7 @@ namespace CapaPresentacion1
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(100, 20);
             this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // tabPage2
             // 
@@ -381,6 +391,7 @@ namespace CapaPresentacion1
             this.btnBuscarCategoria.Size = new System.Drawing.Size(28, 22);
             this.btnBuscarCategoria.TabIndex = 7;
             this.btnBuscarCategoria.UseVisualStyleBackColor = true;
+            this.btnBuscarCategoria.Click += new System.EventHandler(this.btnBuscarCategoria_Click);
             // 
             // pxArticulo
             // 
@@ -403,6 +414,7 @@ namespace CapaPresentacion1
             this.btnLimpiar.Size = new System.Drawing.Size(30, 30);
             this.btnLimpiar.TabIndex = 4;
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnCargar
             // 
@@ -413,6 +425,7 @@ namespace CapaPresentacion1
             this.btnCargar.Size = new System.Drawing.Size(30, 30);
             this.btnCargar.TabIndex = 4;
             this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
             // pxImagen
             // 

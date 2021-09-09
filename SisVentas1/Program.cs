@@ -17,7 +17,7 @@ namespace SisVentas1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPresentacion());
+            Application.Run(FrmArticulo.GetInstancia());
         }
     }
 }
