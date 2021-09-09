@@ -272,9 +272,9 @@ namespace CapaPresentacion1
             this.txtDescripcion.MaxLength = 250;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDescripcion.Size = new System.Drawing.Size(305, 101);
             this.txtDescripcion.TabIndex = 1;
-            //this.txtDescripcion.DoubleClick += new System.EventHandler(this.txtDescripcion_DoubleClick);
             // 
             // txtNombre
             // 
