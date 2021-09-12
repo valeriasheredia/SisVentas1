@@ -49,24 +49,24 @@ namespace CapaPresentacion1
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboTipoDocumento = new System.Windows.Forms.ComboBox();
+            this.txtNumeroDocumento = new System.Windows.Forms.TextBox();
+            this.cboSectorComercial = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtUrl = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cboBuscar = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cboSectorComercial = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtNumeroDocumento = new System.Windows.Forms.TextBox();
-            this.cboTipoDocumento = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtUrl = new System.Windows.Forms.TextBox();
-            this.cboBuscar = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -131,6 +131,8 @@ namespace CapaPresentacion1
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataListado.Size = new System.Drawing.Size(705, 160);
             this.dataListado.TabIndex = 5;
+            this.dataListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellContentClick);
+            this.dataListado.DoubleClick += new System.EventHandler(this.dataListado_DoubleClick);
             // 
             // Eliminar
             // 
@@ -146,6 +148,7 @@ namespace CapaPresentacion1
             this.btnNuevo.TabIndex = 2;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // lblTotal
             // 
@@ -165,6 +168,7 @@ namespace CapaPresentacion1
             this.chkEliminar.TabIndex = 3;
             this.chkEliminar.Text = "Eliminar";
             this.chkEliminar.UseVisualStyleBackColor = true;
+            this.chkEliminar.CheckedChanged += new System.EventHandler(this.chkEliminar_CheckedChanged);
             // 
             // btnImprimir
             // 
@@ -183,6 +187,7 @@ namespace CapaPresentacion1
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnBuscar
             // 
@@ -192,6 +197,7 @@ namespace CapaPresentacion1
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnCancelar
             // 
@@ -201,6 +207,7 @@ namespace CapaPresentacion1
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -210,6 +217,7 @@ namespace CapaPresentacion1
             this.btnEditar.TabIndex = 2;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -219,6 +227,7 @@ namespace CapaPresentacion1
             this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtBuscar
             // 
@@ -268,6 +277,115 @@ namespace CapaPresentacion1
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Proveedores";
             // 
+            // cboTipoDocumento
+            // 
+            this.cboTipoDocumento.FormattingEnabled = true;
+            this.cboTipoDocumento.Items.AddRange(new object[] {
+            "Dni",
+            "Ruc"});
+            this.cboTipoDocumento.Location = new System.Drawing.Point(133, 90);
+            this.cboTipoDocumento.Name = "cboTipoDocumento";
+            this.cboTipoDocumento.Size = new System.Drawing.Size(47, 21);
+            this.cboTipoDocumento.TabIndex = 7;
+            this.cboTipoDocumento.Text = "Ruc";
+            // 
+            // txtNumeroDocumento
+            // 
+            this.txtNumeroDocumento.Location = new System.Drawing.Point(186, 90);
+            this.txtNumeroDocumento.Name = "txtNumeroDocumento";
+            this.txtNumeroDocumento.Size = new System.Drawing.Size(129, 20);
+            this.txtNumeroDocumento.TabIndex = 6;
+            // 
+            // cboSectorComercial
+            // 
+            this.cboSectorComercial.FormattingEnabled = true;
+            this.cboSectorComercial.Items.AddRange(new object[] {
+            "Salud",
+            "Alimentos",
+            "Tecnología",
+            "Ropa",
+            "Servicios"});
+            this.cboSectorComercial.Location = new System.Drawing.Point(509, 59);
+            this.cboSectorComercial.Name = "cboSectorComercial";
+            this.cboSectorComercial.Size = new System.Drawing.Size(196, 21);
+            this.cboSectorComercial.TabIndex = 4;
+            this.cboSectorComercial.Text = "Alimentos";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(417, 62);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Sector comercial";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(369, 167);
+            this.txtEmail.MaxLength = 250;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtEmail.Size = new System.Drawing.Size(336, 20);
+            this.txtEmail.TabIndex = 1;
+            // 
+            // txtUrl
+            // 
+            this.txtUrl.Location = new System.Drawing.Point(32, 210);
+            this.txtUrl.MaxLength = 250;
+            this.txtUrl.Name = "txtUrl";
+            this.txtUrl.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtUrl.Size = new System.Drawing.Size(673, 20);
+            this.txtUrl.TabIndex = 1;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(60, 170);
+            this.txtTelefono.MaxLength = 250;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtTelefono.Size = new System.Drawing.Size(193, 20);
+            this.txtTelefono.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(331, 170);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Email";
+            this.label8.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 213);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(20, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Url";
+            this.label9.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 170);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Teléfono";
+            this.label7.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(41, 94);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Tipo Documento";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -296,6 +414,18 @@ namespace CapaPresentacion1
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // cboBuscar
+            // 
+            this.cboBuscar.FormattingEnabled = true;
+            this.cboBuscar.Items.AddRange(new object[] {
+            "Documento",
+            "Razón Social"});
+            this.cboBuscar.Location = new System.Drawing.Point(57, 28);
+            this.cboBuscar.Name = "cboBuscar";
+            this.cboBuscar.Size = new System.Drawing.Size(121, 21);
+            this.cboBuscar.TabIndex = 6;
+            this.cboBuscar.Text = "Documento";
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -320,127 +450,6 @@ namespace CapaPresentacion1
             this.label1.Size = new System.Drawing.Size(145, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Proveedores";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(417, 62);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Sector comercial";
-            // 
-            // cboSectorComercial
-            // 
-            this.cboSectorComercial.FormattingEnabled = true;
-            this.cboSectorComercial.Items.AddRange(new object[] {
-            "Salud",
-            "Alimentos",
-            "Tecnología",
-            "Ropa",
-            "Servicios"});
-            this.cboSectorComercial.Location = new System.Drawing.Point(509, 59);
-            this.cboSectorComercial.Name = "cboSectorComercial";
-            this.cboSectorComercial.Size = new System.Drawing.Size(196, 21);
-            this.cboSectorComercial.TabIndex = 4;
-            this.cboSectorComercial.Text = "Alimentos";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(41, 94);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Tipo Documento";
-            // 
-            // txtNumeroDocumento
-            // 
-            this.txtNumeroDocumento.Location = new System.Drawing.Point(186, 90);
-            this.txtNumeroDocumento.Name = "txtNumeroDocumento";
-            this.txtNumeroDocumento.Size = new System.Drawing.Size(129, 20);
-            this.txtNumeroDocumento.TabIndex = 6;
-            // 
-            // cboTipoDocumento
-            // 
-            this.cboTipoDocumento.FormattingEnabled = true;
-            this.cboTipoDocumento.Items.AddRange(new object[] {
-            "Dni",
-            "Ruc"});
-            this.cboTipoDocumento.Location = new System.Drawing.Point(133, 90);
-            this.cboTipoDocumento.Name = "cboTipoDocumento";
-            this.cboTipoDocumento.Size = new System.Drawing.Size(47, 21);
-            this.cboTipoDocumento.TabIndex = 7;
-            this.cboTipoDocumento.Text = "Ruc";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 170);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Teléfono";
-            this.label7.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(60, 170);
-            this.txtTelefono.MaxLength = 250;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtTelefono.Size = new System.Drawing.Size(193, 20);
-            this.txtTelefono.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(331, 170);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Email";
-            this.label8.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(369, 167);
-            this.txtEmail.MaxLength = 250;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtEmail.Size = new System.Drawing.Size(336, 20);
-            this.txtEmail.TabIndex = 1;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 213);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(20, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Url";
-            this.label9.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // txtUrl
-            // 
-            this.txtUrl.Location = new System.Drawing.Point(32, 210);
-            this.txtUrl.MaxLength = 250;
-            this.txtUrl.Name = "txtUrl";
-            this.txtUrl.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtUrl.Size = new System.Drawing.Size(673, 20);
-            this.txtUrl.TabIndex = 1;
-            // 
-            // cboBuscar
-            // 
-            this.cboBuscar.FormattingEnabled = true;
-            this.cboBuscar.Items.AddRange(new object[] {
-            "Documento",
-            "Razón Social"});
-            this.cboBuscar.Location = new System.Drawing.Point(57, 28);
-            this.cboBuscar.Name = "cboBuscar";
-            this.cboBuscar.Size = new System.Drawing.Size(121, 21);
-            this.cboBuscar.TabIndex = 6;
-            this.cboBuscar.Text = "Documento";
             // 
             // FrmProveedor
             // 
