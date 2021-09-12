@@ -94,13 +94,13 @@ namespace CapaPresentacion1
         //Metodo BuscarRazon_Social
         private void BuscarRazon_Social()
         {
-            this.dataListado.DataSource = NProveedor.BuscarRazon_Social(this.txtBuscar.Text);
+            this.dataListado.DataSource = NProveedor.BuscarProveedorRazon_Social(this.txtBuscar.Text);
             this.OcultarColumnas();
             lblTotal.Text = "Total de registros: " + Convert.ToString(dataListado.Rows.Count);
         }
         private void BuscarNumero_Documento()
         {
-            this.dataListado.DataSource = NProveedor.BuscarNumero_Documento(this.txtBuscar.Text);
+            this.dataListado.DataSource = NProveedor.BuscarProveedorNum_Documento(this.txtBuscar.Text);
             this.OcultarColumnas();
             lblTotal.Text = "Total de registros: " + Convert.ToString(dataListado.Rows.Count);
         }
