@@ -14,6 +14,11 @@ namespace CapaPresentacion1
     {
         private int childFormNumber = 0;
 
+        public string Idtrabajador="";
+        public string Apellido = "";
+        public string Nombre = "";
+        public string Acceso = "";
+
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -149,6 +154,60 @@ namespace CapaPresentacion1
             FrmTrabajador frm = new FrmTrabajador();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            GestionUsuarios();
+        }
+
+        private void GestionUsuarios()
+        {
+            //Controlar los accesos
+            if (Acceso == "Administrador")
+            {
+                this.mnuAlmacen.Enabled = true;
+                this.mnuCompras.Enabled = true;
+                this.mnuVentas.Enabled = true;
+                this.mnuMantenimiento.Enabled = true;
+                this.mnuConsultas.Enabled = true;
+                this.mnuHerramientas.Enabled = true;
+                this.tsCompras.Enabled = true;
+                this.tsVentas.Enabled = true;
+            }
+           else if (Acceso == "Vendedor")
+            {
+                this.mnuAlmacen.Enabled = false;
+                this.mnuCompras.Enabled = false;
+                this.mnuVentas.Enabled = true;
+                this.mnuMantenimiento.Enabled = false;
+                this.mnuConsultas.Enabled = true;
+                this.mnuHerramientas.Enabled = true;
+                this.tsCompras.Enabled = false;
+                this.tsVentas.Enabled = true;
+            }
+           else if (Acceso == "Almacenero")
+            {
+                this.mnuAlmacen.Enabled = true;
+                this.mnuCompras.Enabled = true;
+                this.mnuVentas.Enabled = false;
+                this.mnuMantenimiento.Enabled = false;
+                this.mnuConsultas.Enabled = true;
+                this.mnuHerramientas.Enabled = true;
+                this.tsCompras.Enabled = true;
+                this.tsVentas.Enabled = false;
+            }
+            else
+            {
+                this.mnuAlmacen.Enabled = false;
+                this.mnuCompras.Enabled = false;
+                this.mnuVentas.Enabled = false;
+                this.mnuMantenimiento.Enabled = false;
+                this.mnuConsultas.Enabled = false;
+                this.mnuHerramientas.Enabled = false;
+                this.tsCompras.Enabled = false;
+                this.tsVentas.Enabled = false;
+            }
         }
     }
 }

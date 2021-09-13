@@ -83,5 +83,14 @@ namespace CapaNegocio1
             Obj.TextoBuscar = textobuscar;
             return Obj.BuscarNum_Documento(Obj);
         }
+
+        //Metodo Login que llama al metodo Login de la clase DTrabajador de la CapaDatos
+        public static DataTable Login(string usuario, string password)
+        {
+            DTrabajador Obj = new DTrabajador();
+            Obj.Usuario = usuario;
+            Obj.Password = password;
+            return Obj.Login(Obj);
+        }
     }
 }
