@@ -51,13 +51,9 @@ namespace CapaPresentacion1
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboTipoDocumento = new System.Windows.Forms.ComboBox();
             this.txtNumeroDocumento = new System.Windows.Forms.TextBox();
-            this.cboSectorComercial = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtUrl = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -67,6 +63,10 @@ namespace CapaPresentacion1
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtUrl = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboSectorComercial = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -106,7 +106,7 @@ namespace CapaPresentacion1
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Dirección";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            //this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label2
             // 
@@ -296,30 +296,6 @@ namespace CapaPresentacion1
             this.txtNumeroDocumento.Size = new System.Drawing.Size(129, 20);
             this.txtNumeroDocumento.TabIndex = 6;
             // 
-            // cboSectorComercial
-            // 
-            this.cboSectorComercial.FormattingEnabled = true;
-            this.cboSectorComercial.Items.AddRange(new object[] {
-            "Salud",
-            "Alimentos",
-            "Tecnología",
-            "Ropa",
-            "Servicios"});
-            this.cboSectorComercial.Location = new System.Drawing.Point(509, 59);
-            this.cboSectorComercial.Name = "cboSectorComercial";
-            this.cboSectorComercial.Size = new System.Drawing.Size(196, 21);
-            this.cboSectorComercial.TabIndex = 4;
-            this.cboSectorComercial.Text = "Alimentos";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(417, 62);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Sector comercial";
-            // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(369, 167);
@@ -328,15 +304,6 @@ namespace CapaPresentacion1
             this.txtEmail.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtEmail.Size = new System.Drawing.Size(336, 20);
             this.txtEmail.TabIndex = 1;
-            // 
-            // txtUrl
-            // 
-            this.txtUrl.Location = new System.Drawing.Point(32, 210);
-            this.txtUrl.MaxLength = 250;
-            this.txtUrl.Name = "txtUrl";
-            this.txtUrl.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtUrl.Size = new System.Drawing.Size(673, 20);
-            this.txtUrl.TabIndex = 1;
             // 
             // txtTelefono
             // 
@@ -355,17 +322,7 @@ namespace CapaPresentacion1
             this.label8.Size = new System.Drawing.Size(32, 13);
             this.label8.TabIndex = 0;
             this.label8.Text = "Email";
-            this.label8.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 213);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(20, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Url";
-            this.label9.Click += new System.EventHandler(this.label4_Click);
+            //this.label8.Click += new System.EventHandler(this.label4_Click);
             // 
             // label7
             // 
@@ -375,7 +332,7 @@ namespace CapaPresentacion1
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 0;
             this.label7.Text = "Teléfono";
-            this.label7.Click += new System.EventHandler(this.label4_Click);
+            //this.label7.Click += new System.EventHandler(this.label4_Click);
             // 
             // label6
             // 
@@ -412,7 +369,7 @@ namespace CapaPresentacion1
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            //this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // cboBuscar
             // 
@@ -450,6 +407,49 @@ namespace CapaPresentacion1
             this.label1.Size = new System.Drawing.Size(145, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Proveedores";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 213);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(20, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Url";
+            //this.label9.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // txtUrl
+            // 
+            this.txtUrl.Location = new System.Drawing.Point(32, 210);
+            this.txtUrl.MaxLength = 250;
+            this.txtUrl.Name = "txtUrl";
+            this.txtUrl.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtUrl.Size = new System.Drawing.Size(673, 20);
+            this.txtUrl.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(417, 62);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Sector comercial";
+            // 
+            // cboSectorComercial
+            // 
+            this.cboSectorComercial.FormattingEnabled = true;
+            this.cboSectorComercial.Items.AddRange(new object[] {
+            "Salud",
+            "Alimentos",
+            "Tecnología",
+            "Ropa",
+            "Servicios"});
+            this.cboSectorComercial.Location = new System.Drawing.Point(509, 59);
+            this.cboSectorComercial.Name = "cboSectorComercial";
+            this.cboSectorComercial.Size = new System.Drawing.Size(196, 21);
+            this.cboSectorComercial.TabIndex = 4;
+            this.cboSectorComercial.Text = "Alimentos";
             // 
             // FrmProveedor
             // 
@@ -501,8 +501,6 @@ namespace CapaPresentacion1
         private System.Windows.Forms.ToolTip ttMensaje;
         private System.Windows.Forms.ErrorProvider errorIcono;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboSectorComercial;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboTipoDocumento;
         private System.Windows.Forms.TextBox txtNumeroDocumento;
         private System.Windows.Forms.Label label6;
@@ -510,8 +508,10 @@ namespace CapaPresentacion1
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cboBuscar;
         private System.Windows.Forms.TextBox txtUrl;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cboBuscar;
+        private System.Windows.Forms.ComboBox cboSectorComercial;
+        private System.Windows.Forms.Label label5;
     }
 }
