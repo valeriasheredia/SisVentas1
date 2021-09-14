@@ -32,13 +32,13 @@ namespace CapaDatos1
         public DateTime Fecha_produccion { get => _Fecha_produccion; set => _Fecha_produccion = value; }
         public DateTime Fecha_vencimiento { get => _Fecha_vencimiento; set => _Fecha_vencimiento = value; }
     
-    //Constructor
+    //Constructor vacio
     public DDetalle_Ingreso()
         {
 
         }
 
-        //constructor con parametros
+        //Constructor con parametros
         public DDetalle_Ingreso(int iddetalle_ingreso, int idingreso, int idarticulo, decimal precio_compra,
             decimal precio_venta,int stock_inicial, int stock_actual, DateTime fecha_produccion,
             DateTime fecha_vencimiento)
@@ -54,7 +54,10 @@ namespace CapaDatos1
             this.Fecha_vencimiento = fecha_vencimiento;
         }
         //Metodo insertar
-        public string Insertar(DDetalle_Ingreso Detalle_Ingreso, ref SqlConnection SqlCon, ref SqlTransaction SqlTra)
+        public string Insertar(
+            DDetalle_Ingreso Detalle_Ingreso,
+            ref SqlConnection SqlCon, 
+            ref SqlTransaction SqlTra)
         {
             string rpta = "";
             try
@@ -75,52 +78,50 @@ namespace CapaDatos1
                 SqlParameter ParIdingreso = new SqlParameter();
                 ParIdingreso.ParameterName = "@idingreso";
                 ParIdingreso.SqlDbType = SqlDbType.Int;
-               // ParIdingreso.Size = 20;
                 ParIdingreso.Value = Detalle_Ingreso.Idingreso;
                 SqlCmd.Parameters.Add(ParIdingreso);
 
                 SqlParameter ParIdarticulo = new SqlParameter();
                 ParIdarticulo.ParameterName = "@idarticulo";
                 ParIdarticulo.SqlDbType = SqlDbType.Int;
-                // ParIdingreso.Size = 20;
                 ParIdarticulo.Value = Detalle_Ingreso.Idarticulo;
                 SqlCmd.Parameters.Add(ParIdarticulo);
 
                 SqlParameter ParPrecio_compra = new SqlParameter();
                 ParPrecio_compra.ParameterName = "@precio_compra";
                 ParPrecio_compra.SqlDbType = SqlDbType.Money;
-                //ParPrecio_compra.Size = 1;
                 ParPrecio_compra.Value = Detalle_Ingreso.Precio_compra;
+                SqlCmd.Parameters.Add(ParPrecio_compra);
 
                 SqlParameter ParPrecio_venta = new SqlParameter();
                 ParPrecio_venta.ParameterName = "@precio_venta";
                 ParPrecio_venta.SqlDbType = SqlDbType.Money;
-                //ParPrecio_compra.Size = 1;
                 ParPrecio_venta.Value = Detalle_Ingreso.Precio_venta;
+                SqlCmd.Parameters.Add(ParPrecio_venta);
 
                 SqlParameter ParStock_actual = new SqlParameter();
                 ParStock_actual.ParameterName = "@stock_actual";
                 ParStock_actual.SqlDbType = SqlDbType.Int;
-                //ParPrecio_compra.Size = 1;
                 ParStock_actual.Value = Detalle_Ingreso.Stock_actual;
+                SqlCmd.Parameters.Add(ParStock_actual);
 
                 SqlParameter ParStock_inicial = new SqlParameter();
                 ParStock_inicial.ParameterName = "@stock_inicial";
                 ParStock_inicial.SqlDbType = SqlDbType.Int;
-                //ParPrecio_compra.Size = 1;
                 ParStock_inicial.Value = Detalle_Ingreso.Stock_inicial;
+                SqlCmd.Parameters.Add(ParStock_inicial);
 
                 SqlParameter ParFecha_produccion = new SqlParameter();
                 ParFecha_produccion.ParameterName = "@fecha_produccion";
-                ParFecha_produccion.SqlDbType = SqlDbType.DateTime;
-                //ParPrecio_compra.Size = 1;
+                ParFecha_produccion.SqlDbType = SqlDbType.Date;
                 ParFecha_produccion.Value = Detalle_Ingreso.Fecha_produccion;
+                SqlCmd.Parameters.Add(ParFecha_produccion);
 
                 SqlParameter ParFecha_vencimiento = new SqlParameter();
                 ParFecha_vencimiento.ParameterName = "@fecha_vencimiento";
-                ParFecha_vencimiento.SqlDbType = SqlDbType.DateTime;
-                //ParPrecio_compra.Size = 1;
+                ParFecha_vencimiento.SqlDbType = SqlDbType.Date;
                 ParFecha_vencimiento.Value = Detalle_Ingreso.Fecha_vencimiento;
+                SqlCmd.Parameters.Add(ParFecha_vencimiento);
 
                 //ejecutamos el comando
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "Ok" : "No se ingreso el registro";
@@ -131,6 +132,5 @@ namespace CapaDatos1
             }           
             return rpta;
         }    
-
     }
 }
