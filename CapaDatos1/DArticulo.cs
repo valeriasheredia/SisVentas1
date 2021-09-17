@@ -60,7 +60,10 @@ namespace CapaDatos1
             set => _TextoBuscar = value; 
         }
 
-        public DArticulo(int idarticulo, string codigo, string nombre, string descripcion, byte[] imagen, int idcategoria, int idpresentacion, string textobuscar)
+        public DArticulo(int idarticulo, string codigo, 
+            string nombre, string descripcion, 
+            byte[] imagen, int idcategoria, 
+            int idpresentacion, string textobuscar)
         {
             this.Idarticulo = idarticulo;
             this.Codigo = codigo;

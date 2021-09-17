@@ -130,21 +130,21 @@ namespace CapaPresentacion1
             // artículosToolStripMenuItem1
             // 
             this.artículosToolStripMenuItem1.Name = "artículosToolStripMenuItem1";
-            this.artículosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.artículosToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
             this.artículosToolStripMenuItem1.Text = "Artículos";
             this.artículosToolStripMenuItem1.Click += new System.EventHandler(this.artículosToolStripMenuItem1_Click);
             // 
             // categoríasToolStripMenuItem1
             // 
             this.categoríasToolStripMenuItem1.Name = "categoríasToolStripMenuItem1";
-            this.categoríasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.categoríasToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
             this.categoríasToolStripMenuItem1.Text = "Categorías";
             this.categoríasToolStripMenuItem1.Click += new System.EventHandler(this.categoríasToolStripMenuItem1_Click);
             // 
             // presentacionesToolStripMenuItem
             // 
             this.presentacionesToolStripMenuItem.Name = "presentacionesToolStripMenuItem";
-            this.presentacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.presentacionesToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.presentacionesToolStripMenuItem.Text = "Presentaciones";
             this.presentacionesToolStripMenuItem.Click += new System.EventHandler(this.presentacionesToolStripMenuItem_Click);
             // 
@@ -162,6 +162,7 @@ namespace CapaPresentacion1
             this.ingresosToolStripMenuItem1.Name = "ingresosToolStripMenuItem1";
             this.ingresosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.ingresosToolStripMenuItem1.Text = "Ingresos";
+            this.ingresosToolStripMenuItem1.Click += new System.EventHandler(this.ingresosToolStripMenuItem1_Click);
             // 
             // proveedorToolStripMenuItem1
             // 

@@ -11,7 +11,13 @@ namespace CapaNegocio1
     public class NArticulo
     {
         //Metodo Insertar que llama al metodo insertar de la clase DArticulo de la CapaDatos
-        public static string Insertar(string codigo, string nombre, string descripcion, byte[] imagen, int idcategoria, int idpresentacion)
+        public static string Insertar(
+            string codigo,
+            string nombre, 
+            string descripcion,
+            byte[] imagen, 
+            int idcategoria, 
+            int idpresentacion)
         {
             DArticulo Obj = new DArticulo();
             Obj.Codigo = codigo;
@@ -25,7 +31,8 @@ namespace CapaNegocio1
         }
 
         //Metodo Editar que llama al metodo editar de la clase DArticulo de la CapaDatos
-        public static string Editar(int idarticulo, string codigo,string nombre, string descripcion, byte[] imagen, int idcategoria, int idpresentacion)
+        public static string Editar(int idarticulo, string codigo,string nombre, 
+            string descripcion, byte[] imagen, int idcategoria, int idpresentacion)
         {
             DArticulo Obj = new DArticulo();
             Obj.Idarticulo = idarticulo;

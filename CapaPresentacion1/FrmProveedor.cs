@@ -98,6 +98,8 @@ namespace CapaPresentacion1
             this.OcultarColumnas();
             lblTotal.Text = "Total de registros: " + Convert.ToString(dataListado.Rows.Count);
         }
+
+        //Metodo BuscarNumero_Documento
         private void BuscarNumero_Documento()
         {
             this.dataListado.DataSource = NProveedor.BuscarProveedorNum_Documento(this.txtBuscar.Text);

@@ -117,6 +117,7 @@ namespace CapaPresentacion1
             lblTotal.Text = "Total de registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
+        //Buscar Nombre
         private void BuscarNombre()
         {
             this.dataListado.DataSource = NArticulo.BuscarNombre(this.txtBuscar.Text);
@@ -155,7 +156,6 @@ namespace CapaPresentacion1
         {
             this.pxImagen.SizeMode = PictureBoxSizeMode.StretchImage;
             this.pxImagen.Image = global::CapaPresentacion1.Properties.Resources.imagenBlanco;
-
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -183,7 +183,9 @@ namespace CapaPresentacion1
             try
             {
                 string rpta = "";
-                if (this.txtNombre.Text == string.Empty ||this.txtIdCategoria.Text==string.Empty ||this.txtCodigo.Text==string.Empty )
+                if (this.txtNombre.Text == string.Empty ||
+                    this.txtIdCategoria.Text==string.Empty ||
+                    this.txtCodigo.Text==string.Empty )
                 {
                     MensajeError("Falta ingresar algunos datos");
                     errorIcono.SetError(txtNombre, "Ingrese un valor");
@@ -206,7 +208,8 @@ namespace CapaPresentacion1
                     }
                     else
                     {
-                        rpta = NArticulo.Editar(Convert.ToInt32(this.txtIdArticulo.Text),
+                        rpta = NArticulo.Editar(Convert.ToInt32(
+                                                this.txtIdArticulo.Text),
                                                 this.txtCodigo.Text,
                                                 this.txtNombre.Text.Trim().ToUpper(),
                                                 this.txtDescripcion.Text.Trim(),
