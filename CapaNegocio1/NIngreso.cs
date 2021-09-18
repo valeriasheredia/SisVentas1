@@ -56,7 +56,7 @@ namespace CapaNegocio1
             return new DIngreso().Mostrar();
         }
 
-        //Metodo BuscarNombre que llama al metodo buscarnombre de la clase DCategoria de la CapaDatos
+        //Metodo BuscarFechas que llama al metodo buscarnombre de la clase DCategoria de la CapaDatos
         public static DataTable BuscarFechas(string textobuscar, string textobuscar2)
         {
             DIngreso Obj = new DIngreso();
