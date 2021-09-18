@@ -45,7 +45,6 @@ namespace CapaPresentacion1
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.txtIdventa = new System.Windows.Forms.TextBox();
@@ -67,7 +66,7 @@ namespace CapaPresentacion1
             this.chkAnular = new System.Windows.Forms.CheckBox();
             this.btnComprobante = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
-            this.btnAnular = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -109,6 +108,7 @@ namespace CapaPresentacion1
             this.btnQuitar.TabIndex = 16;
             this.btnQuitar.Text = "Quitar";
             this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // btnAgregar
             // 
@@ -118,6 +118,7 @@ namespace CapaPresentacion1
             this.btnAgregar.TabIndex = 15;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtIdArticulo
             // 
@@ -236,33 +237,27 @@ namespace CapaPresentacion1
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(462, 284);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
-            this.btnEditar.TabIndex = 2;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(381, 284);
+            this.btnGuardar.Location = new System.Drawing.Point(462, 284);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(300, 284);
+            this.btnNuevo.Location = new System.Drawing.Point(381, 284);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnNuevo.TabIndex = 2;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // txtIdventa
             // 
@@ -344,7 +339,7 @@ namespace CapaPresentacion1
             this.tabPage1.Controls.Add(this.chkAnular);
             this.tabPage1.Controls.Add(this.btnComprobante);
             this.tabPage1.Controls.Add(this.btnImprimir);
-            this.tabPage1.Controls.Add(this.btnAnular);
+            this.tabPage1.Controls.Add(this.btnEliminar);
             this.tabPage1.Controls.Add(this.btnBuscar);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.lblNombre);
@@ -359,7 +354,7 @@ namespace CapaPresentacion1
             // dtFecha2
             // 
             this.dtFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFecha2.Location = new System.Drawing.Point(314, 78);
+            this.dtFecha2.Location = new System.Drawing.Point(76, 59);
             this.dtFecha2.Name = "dtFecha2";
             this.dtFecha2.Size = new System.Drawing.Size(99, 20);
             this.dtFecha2.TabIndex = 6;
@@ -367,9 +362,9 @@ namespace CapaPresentacion1
             // dtFecha1
             // 
             this.dtFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFecha1.Location = new System.Drawing.Point(78, 78);
+            this.dtFecha1.Location = new System.Drawing.Point(76, 33);
             this.dtFecha1.Name = "dtFecha1";
-            this.dtFecha1.Size = new System.Drawing.Size(100, 20);
+            this.dtFecha1.Size = new System.Drawing.Size(99, 20);
             this.dtFecha1.TabIndex = 6;
             // 
             // dataListado
@@ -380,12 +375,14 @@ namespace CapaPresentacion1
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
-            this.dataListado.Location = new System.Drawing.Point(10, 149);
+            this.dataListado.Location = new System.Drawing.Point(10, 113);
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListado.Size = new System.Drawing.Size(504, 160);
+            this.dataListado.Size = new System.Drawing.Size(620, 196);
             this.dataListado.TabIndex = 5;
+            this.dataListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellContentClick);
+            this.dataListado.DoubleClick += new System.EventHandler(this.dataListado_DoubleClick);
             // 
             // Eliminar
             // 
@@ -396,7 +393,7 @@ namespace CapaPresentacion1
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(279, 120);
+            this.lblTotal.Location = new System.Drawing.Point(406, 94);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(31, 13);
             this.lblTotal.TabIndex = 4;
@@ -405,16 +402,17 @@ namespace CapaPresentacion1
             // chkAnular
             // 
             this.chkAnular.AutoSize = true;
-            this.chkAnular.Location = new System.Drawing.Point(14, 120);
+            this.chkAnular.Location = new System.Drawing.Point(7, 90);
             this.chkAnular.Name = "chkAnular";
             this.chkAnular.Size = new System.Drawing.Size(62, 17);
             this.chkAnular.TabIndex = 3;
             this.chkAnular.Text = "Eliminar";
             this.chkAnular.UseVisualStyleBackColor = true;
+            this.chkAnular.CheckedChanged += new System.EventHandler(this.chkAnular_CheckedChanged);
             // 
             // btnComprobante
             // 
-            this.btnComprobante.Location = new System.Drawing.Point(439, 34);
+            this.btnComprobante.Location = new System.Drawing.Point(463, 33);
             this.btnComprobante.Name = "btnComprobante";
             this.btnComprobante.Size = new System.Drawing.Size(86, 23);
             this.btnComprobante.TabIndex = 2;
@@ -423,35 +421,37 @@ namespace CapaPresentacion1
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(531, 34);
+            this.btnImprimir.Location = new System.Drawing.Point(555, 33);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 23);
             this.btnImprimir.TabIndex = 2;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
             // 
-            // btnAnular
+            // btnEliminar
             // 
-            this.btnAnular.Location = new System.Drawing.Point(358, 34);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(75, 23);
-            this.btnAnular.TabIndex = 2;
-            this.btnAnular.Text = "Eliminar";
-            this.btnAnular.UseVisualStyleBackColor = true;
+            this.btnEliminar.Location = new System.Drawing.Point(382, 33);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(277, 34);
+            this.btnBuscar.Location = new System.Drawing.Point(301, 33);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(254, 84);
+            this.label8.Location = new System.Drawing.Point(16, 65);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 13);
             this.label8.TabIndex = 0;
@@ -460,7 +460,7 @@ namespace CapaPresentacion1
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(7, 84);
+            this.lblNombre.Location = new System.Drawing.Point(5, 39);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(65, 13);
             this.lblNombre.TabIndex = 0;
@@ -620,7 +620,6 @@ namespace CapaPresentacion1
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btnCancelar);
-            this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.btnNuevo);
             this.groupBox1.Controls.Add(this.txtIdventa);
@@ -719,7 +718,7 @@ namespace CapaPresentacion1
         private System.Windows.Forms.CheckBox chkAnular;
         private System.Windows.Forms.Button btnComprobante;
         private System.Windows.Forms.Button btnImprimir;
-        private System.Windows.Forms.Button btnAnular;
+        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblNombre;
@@ -755,7 +754,6 @@ namespace CapaPresentacion1
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.TextBox txtIdventa;

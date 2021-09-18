@@ -414,5 +414,10 @@ namespace CapaPresentacion1
             this.MostrarDetalle();
             this.tabControl1.SelectedIndex = 1;
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

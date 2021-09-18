@@ -78,7 +78,6 @@ namespace CapaPresentacion1
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.txtIdingreso = new System.Windows.Forms.TextBox();
@@ -125,7 +124,7 @@ namespace CapaPresentacion1
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(7, 84);
+            this.lblNombre.Location = new System.Drawing.Point(8, 22);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(65, 13);
             this.lblNombre.TabIndex = 0;
@@ -154,7 +153,7 @@ namespace CapaPresentacion1
             // dtFecha2
             // 
             this.dtFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFecha2.Location = new System.Drawing.Point(314, 78);
+            this.dtFecha2.Location = new System.Drawing.Point(245, 16);
             this.dtFecha2.Name = "dtFecha2";
             this.dtFecha2.Size = new System.Drawing.Size(99, 20);
             this.dtFecha2.TabIndex = 6;
@@ -162,7 +161,7 @@ namespace CapaPresentacion1
             // dtFecha1
             // 
             this.dtFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFecha1.Location = new System.Drawing.Point(78, 78);
+            this.dtFecha1.Location = new System.Drawing.Point(79, 16);
             this.dtFecha1.Name = "dtFecha1";
             this.dtFecha1.Size = new System.Drawing.Size(100, 20);
             this.dtFecha1.TabIndex = 6;
@@ -175,11 +174,11 @@ namespace CapaPresentacion1
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
-            this.dataListado.Location = new System.Drawing.Point(10, 149);
+            this.dataListado.Location = new System.Drawing.Point(10, 70);
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListado.Size = new System.Drawing.Size(504, 160);
+            this.dataListado.Size = new System.Drawing.Size(615, 239);
             this.dataListado.TabIndex = 5;
             this.dataListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellContentClick);
             this.dataListado.DoubleClick += new System.EventHandler(this.dataListado_DoubleClick);
@@ -193,7 +192,7 @@ namespace CapaPresentacion1
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(279, 120);
+            this.lblTotal.Location = new System.Drawing.Point(385, 54);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(31, 13);
             this.lblTotal.TabIndex = 4;
@@ -202,7 +201,7 @@ namespace CapaPresentacion1
             // chkAnular
             // 
             this.chkAnular.AutoSize = true;
-            this.chkAnular.Location = new System.Drawing.Point(14, 120);
+            this.chkAnular.Location = new System.Drawing.Point(6, 54);
             this.chkAnular.Name = "chkAnular";
             this.chkAnular.Size = new System.Drawing.Size(56, 17);
             this.chkAnular.TabIndex = 3;
@@ -212,7 +211,7 @@ namespace CapaPresentacion1
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(439, 34);
+            this.btnImprimir.Location = new System.Drawing.Point(550, 16);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 23);
             this.btnImprimir.TabIndex = 2;
@@ -221,7 +220,7 @@ namespace CapaPresentacion1
             // 
             // btnAnular
             // 
-            this.btnAnular.Location = new System.Drawing.Point(358, 34);
+            this.btnAnular.Location = new System.Drawing.Point(469, 16);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(75, 23);
             this.btnAnular.TabIndex = 2;
@@ -231,7 +230,7 @@ namespace CapaPresentacion1
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(277, 34);
+            this.btnBuscar.Location = new System.Drawing.Point(388, 16);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 2;
@@ -242,7 +241,7 @@ namespace CapaPresentacion1
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(254, 84);
+            this.label8.Location = new System.Drawing.Point(185, 22);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 13);
             this.label8.TabIndex = 0;
@@ -289,7 +288,6 @@ namespace CapaPresentacion1
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btnCancelar);
-            this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.btnNuevo);
             this.groupBox1.Controls.Add(this.txtIdingreso);
@@ -301,6 +299,7 @@ namespace CapaPresentacion1
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingresos Almacén";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lblTotalPagado
             // 
@@ -581,18 +580,9 @@ namespace CapaPresentacion1
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(462, 284);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
-            this.btnEditar.TabIndex = 2;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(381, 284);
+            this.btnGuardar.Location = new System.Drawing.Point(462, 284);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 2;
@@ -602,7 +592,7 @@ namespace CapaPresentacion1
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(300, 284);
+            this.btnNuevo.Location = new System.Drawing.Point(381, 284);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnNuevo.TabIndex = 2;
@@ -716,7 +706,6 @@ namespace CapaPresentacion1
         private System.Windows.Forms.DateTimePicker dtFecha;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.TextBox txtIdingreso;
